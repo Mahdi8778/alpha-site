@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d1c">
+  <title>ALPHA | دستیار هوشمند</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">A</span><span><b>ALPHA</b><small>دستیار همراه تو</small></span></a>
+      <div class="status"><i></i> آنلاین و آماده گفتگو</div>
+    </header>
+    <section class="hero">
+      <div class="robot-wrap" aria-label="ربات خیالی آلفا">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="robot">
+          <div class="antenna"></div><div class="head">
+            <div class="ear left"></div><div class="ear right"></div>
+            <div class="face"><div class="eyes"><i></i><i></i></div><div class="smile"></div></div>
+          </div>
+          <div class="neck"></div><div class="body"><span class="core"></span><span class="body-line"></span></div>
+          <div class="arm arm-left"></div><div class="arm arm-right"></div>
+        </div>
+        <div class="robot-shadow"></div>
+      </div>
+      <div class="intro">
+        <span class="eyebrow">نسخه آزمایشی ۱.۰</span>
+        <h1>سلام! من <em>ALPHA</em> هستم.</h1>
+        <p>یک دوست دیجیتالی مهربان برای گپ زدن، ایده‌پردازی و لحظه‌های کنجکاوی.</p>
+        <div class="chips"><span>✦ فارسی</span><span>✦ دوستانه</span><span>✦ همیشه آماده</span></div>
+      </div>
+    </section>
+    <section class="chat-card">
+      <div class="chat-head"><div><b>گفتگو با آلفا</b><small>نسخه نمایشی — پاسخ‌ها آزمایشی هستند</small></div><button id="clearBtn" class="clear">گفتگوی جدید ↻</button></div>
+      <div id="messages" class="messages" aria-live="polite">
+        <div class="message bot"><span class="avatar">A</span><div class="bubble">سلام دوست من! 👋<br>من آلفا هستم. هرچی دوست داری بپرس یا فقط بیا گپ بزنیم!</div></div>
+      </div>
+      <div class="suggestions"><button>سلام آلفا!</button><button>خودت رو معرفی کن</button><button>یه جوک بگو</button></div>
+      <form id="chatForm" class="composer">
+        <input id="messageInput" autocomplete="off" placeholder="پیامت رو برای آلفا بنویس..." aria-label="پیام شما">
+        <button type="submit" aria-label="ارسال پیام">➤</button>
+      </form>
+      <p class="disclaimer">آلفا در حال حاضر نسخه نمایشی است و از هوش مصنوعی آنلاین استفاده نمی‌کند.</p>
+    </section>
+    <footer>ساخته‌شده با علاقه برای دوستان کنجکاو <span>✦ ALPHA</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
