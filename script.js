@@ -1,33 +1,6 @@
-const form=document.getElementById('chatForm');
-const input=document.getElementById('messageInput');
-const messages=document.getElementById('messages');
-const clearBtn=document.getElementById('clearBtn');
-
-function addMessage(text,who){
-  const row=document.createElement('div'); row.className=`message ${who}`;
-  const avatar=document.createElement('span'); avatar.className='avatar'; avatar.textContent=who==='bot'?'A':'شما';
-  const bubble=document.createElement('div'); bubble.className='bubble'; bubble.textContent=text;
-  row.append(avatar,bubble); messages.append(row); messages.scrollTop=messages.scrollHeight;
-}
-function reply(text){
-  const t=text.trim();
-  if(/سلام|درود|hello/i.test(t)) return 'سلام به روی ماهت! 😊 خوشحالم اومدی. دوست داری درباره چی گپ بزنیم؟';
-  if(/خودت|معرفی/i.test(t)) return 'من آلفا هستم؛ یک ربات نمایشی مهربون و فارسی‌زبان. فعلاً در نسخه آزمایشی‌ام و جواب‌هام از قبل تعریف شدن.';
-  if(/جوک|خنده/i.test(t)) return 'یه روز کامپیوتر رفت دکتر؛ گفت: هرچی می‌خورم ویروسم خوب نمی‌شه! 😄';
-  if(/اسم|نام/i.test(t)) return 'اسم من ALPHA هست؛ خوش اومدی دوست من!';
-  if(/خداحافظ|فعلا|بای/i.test(t)) return 'فعلاً دوست من! هر وقت برگشتی من همین‌جام. 👋';
-  if(/دوست/i.test(t)) return 'چه خوب! منم خوشحالم باهات آشنا شدم. 😊';
-  return 'چه سؤال جالبی! 🌟 من فعلاً نسخه نمایشی آلفا هستم و هنوز به هوش مصنوعی واقعی وصل نشدم. بعداً می‌تونیم این قابلیت رو به من اضافه کنیم.';
-}
-form.addEventListener('submit',e=>{
-  e.preventDefault(); const value=input.value.trim(); if(!value)return;
-  addMessage(value,'user'); input.value='';
-  setTimeout(()=>addMessage(reply(value),'bot'),350);
-});
-document.querySelectorAll('.suggestions button').forEach(btn=>btn.addEventListener('click',()=>{
-  input.value=btn.textContent; form.requestSubmit();
-}));
-clearBtn.addEventListener('click',()=>{
-  messages.innerHTML='';
-  addMessage('گفتگوی تازه شروع شد! 😊 چی تو ذهنته؟','bot');
-});
+const form=document.getElementById('chatForm'),input=document.getElementById('messageInput'),messages=document.getElementById('messages');
+function add(text,who){const row=document.createElement('div');row.className='msg '+who;const av=document.createElement('span');av.className='msg-avatar';av.textContent=who==='bot'?'A':'ش';const b=document.createElement('div');b.className='bubble';b.textContent=text;row.append(av,b);messages.append(row);messages.scrollTop=messages.scrollHeight}
+function answer(s){if(/سلام|درود|hello/i.test(s))return'سلام رفیق! ✨ چه خوب که اومدی. امروز چه خبر؟';if(/معرفی|خودت/i.test(s))return'من ALPHA هستم؛ یک همراه دیجیتالی مهربون و فارسی‌زبان. فعلاً نسخه نمایشی‌ام و جواب‌های آزمایشی می‌دم.';if(/جوک|خنده/i.test(s))return'چرا ربات هیچ‌وقت گم نمی‌شه؟ چون همیشه مسیرش رو توی حافظه‌اش ذخیره کرده! 😄';if(/ایده/i.test(s))return'یه ایده: یک دفترچه خاطرات دیجیتالی بساز که هر روز یک سؤال جالب ازت بپرسه و جواب‌هات رو نگه داره. 🌟';if(/خداحافظ|فعلا|بای/i.test(s))return'فعلاً رفیق! هر وقت برگشتی من همین‌جام. 👋';return'سؤال جالبیه! من هنوز به هوش مصنوعی آنلاین وصل نیستم، ولی به‌زودی می‌تونیم قابلیت‌های بیشتری بهم اضافه کنیم. 💫'}
+form.addEventListener('submit',e=>{e.preventDefault();const s=input.value.trim();if(!s)return;add(s,'user');input.value='';setTimeout(()=>add(answer(s),'bot'),350)});
+document.querySelectorAll('.suggestions button').forEach(b=>b.addEventListener('click',()=>{input.value=b.textContent;form.requestSubmit()}));
+document.getElementById('clearBtn').addEventListener('click',()=>{messages.innerHTML='';add('گفتگوی تازه شروع شد! 😊 از کجا شروع کنیم؟','bot')});
