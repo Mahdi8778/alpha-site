@@ -1,53 +1,40 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090d1c">
-  <title>ALPHA | دستیار هوشمند</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ALPHA — همراه هوشمند</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
-  <main class="shell">
-    <header class="topbar">
-      <a class="brand" href="#"><span class="brand-mark">A</span><span><b>ALPHA</b><small>دستیار همراه تو</small></span></a>
-      <div class="status"><i></i> آنلاین و آماده گفتگو</div>
-    </header>
-    <section class="hero">
-      <div class="robot-wrap" aria-label="ربات خیالی آلفا">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="robot">
-          <div class="antenna"></div><div class="head">
-            <div class="ear left"></div><div class="ear right"></div>
-            <div class="face"><div class="eyes"><i></i><i></i></div><div class="smile"></div></div>
-          </div>
-          <div class="neck"></div><div class="body"><span class="core"></span><span class="body-line"></span></div>
-          <div class="arm arm-left"></div><div class="arm arm-right"></div>
-        </div>
-        <div class="robot-shadow"></div>
-      </div>
-      <div class="intro">
-        <span class="eyebrow">نسخه آزمایشی ۱.۰</span>
-        <h1>سلام! من <em>ALPHA</em> هستم.</h1>
-        <p>یک دوست دیجیتالی مهربان برای گپ زدن، ایده‌پردازی و لحظه‌های کنجکاوی.</p>
-        <div class="chips"><span>✦ فارسی</span><span>✦ دوستانه</span><span>✦ همیشه آماده</span></div>
-      </div>
-    </section>
-    <section class="chat-card">
-      <div class="chat-head"><div><b>گفتگو با آلفا</b><small>نسخه نمایشی — پاسخ‌ها آزمایشی هستند</small></div><button id="clearBtn" class="clear">گفتگوی جدید ↻</button></div>
-      <div id="messages" class="messages" aria-live="polite">
-        <div class="message bot"><span class="avatar">A</span><div class="bubble">سلام دوست من! 👋<br>من آلفا هستم. هرچی دوست داری بپرس یا فقط بیا گپ بزنیم!</div></div>
-      </div>
-      <div class="suggestions"><button>سلام آلفا!</button><button>خودت رو معرفی کن</button><button>یه جوک بگو</button></div>
-      <form id="chatForm" class="composer">
-        <input id="messageInput" autocomplete="off" placeholder="پیامت رو برای آلفا بنویس..." aria-label="پیام شما">
-        <button type="submit" aria-label="ارسال پیام">➤</button>
-      </form>
-      <p class="disclaimer">آلفا در حال حاضر نسخه نمایشی است و از هوش مصنوعی آنلاین استفاده نمی‌کند.</p>
-    </section>
-    <footer>ساخته‌شده با علاقه برای دوستان کنجکاو <span>✦ ALPHA</span></footer>
-  </main>
-  <script src="script.js"></script>
-</body>
-</html>
+<div class="app">
+ <aside class="sidebar">
+  <div class="brand"><span class="brand-mark">A</span><span>ALPHA</span></div>
+  <button class="new-chat" id="newChat">＋ گفتگوی جدید</button>
+  <div class="side-label">فضای شخصی</div>
+  <div class="side-link active">◉ <span>دستیار ALPHA</span></div>
+  <div class="side-link">⌁ <span>شخصیت من</span></div>
+  <div class="side-bottom"><span class="online-dot"></span> ALPHA آماده است <small>نسخه نمایشی</small></div>
+ </aside>
+ <main class="main">
+  <header><div class="mobile-brand">ALPHA <span class="online-dot"></span></div><div class="top-caption">همراه هوشمند تو</div><button class="icon-btn" id="soundToggle" title="روشن/خاموش کردن صدا">◖))</button></header>
+  <section class="stage">
+   <div class="ambient a1"></div><div class="ambient a2"></div>
+   <div class="hero-copy"><div class="eyebrow"><span class="online-dot"></span> آنلاین و آماده گفتگو</div><h1>سلام، من <em>ALPHA</em> هستم.</h1><p>هر چیزی توی ذهنته، با من در میون بذار.</p></div>
+   <div id="avatarWrap" class="avatar-wrap">
+    <div class="avatar-glow"></div><div id="avatarLoading" class="avatar-loading"><div class="loader"></div><span>در حال بارگذاری شخصیت سه‌بعدی…</span></div>
+    <canvas id="avatarCanvas"></canvas>
+    <div id="avatarFallback" class="avatar-fallback" hidden><div class="fallback-face">◉</div><b>ALPHA</b><small>مدل سه‌بعدی بارگذاری نشد</small><span>اتصال اینترنت را بررسی کن</span></div>
+   </div>
+   <div class="status-pill"><span class="online-dot"></span><span id="statusText">در انتظار پیام تو</span></div>
+   <div class="chat-panel">
+    <div class="chat-head"><div class="mini-avatar">A</div><div><b>گفتگو با ALPHA</b><small>پاسخ‌گوی مهربان تو</small></div><span class="chat-live">● زنده</span></div>
+    <div class="messages" id="messages"><div class="message bot">سلام! خوش اومدی ✨ من ALPHA هستم. دوست داری درباره چی صحبت کنیم؟</div></div>
+    <div class="composer"><textarea id="messageInput" rows="1" placeholder="پیامت رو اینجا بنویس…"></textarea><button id="micBtn" class="round-btn" title="صحبت با میکروفون">🎙</button><button id="sendBtn" class="send-btn" title="ارسال">➤</button></div>
+    <div class="hint">برای صحبت، روی میکروفون بزن · برای ارسال، Enter را فشار بده</div>
+   </div>
+  </section>
+ </main>
+</div>
+<script type="module" src="script.js"></script>
+</body></html>
