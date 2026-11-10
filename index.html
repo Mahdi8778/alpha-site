@@ -1,40 +1,11 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ALPHA — همراه هوشمند</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="app">
- <aside class="sidebar">
-  <div class="brand"><span class="brand-mark">A</span><span>ALPHA</span></div>
-  <button class="new-chat" id="newChat">＋ گفتگوی جدید</button>
-  <div class="side-label">فضای شخصی</div>
-  <div class="side-link active">◉ <span>دستیار ALPHA</span></div>
-  <div class="side-link">⌁ <span>شخصیت من</span></div>
-  <div class="side-bottom"><span class="online-dot"></span> ALPHA آماده است <small>نسخه نمایشی</small></div>
- </aside>
- <main class="main">
-  <header><div class="mobile-brand">ALPHA <span class="online-dot"></span></div><div class="top-caption">همراه هوشمند تو</div><button class="icon-btn" id="soundToggle" title="روشن/خاموش کردن صدا">◖))</button></header>
-  <section class="stage">
-   <div class="ambient a1"></div><div class="ambient a2"></div>
-   <div class="hero-copy"><div class="eyebrow"><span class="online-dot"></span> آنلاین و آماده گفتگو</div><h1>سلام، من <em>ALPHA</em> هستم.</h1><p>هر چیزی توی ذهنته، با من در میون بذار.</p></div>
-   <div id="avatarWrap" class="avatar-wrap">
-    <div class="avatar-glow"></div><div id="avatarLoading" class="avatar-loading"><div class="loader"></div><span>در حال بارگذاری شخصیت سه‌بعدی…</span></div>
-    <canvas id="avatarCanvas"></canvas>
-    <div id="avatarFallback" class="avatar-fallback" hidden><div class="fallback-face">◉</div><b>ALPHA</b><small>مدل سه‌بعدی بارگذاری نشد</small><span>اتصال اینترنت را بررسی کن</span></div>
-   </div>
-   <div class="status-pill"><span class="online-dot"></span><span id="statusText">در انتظار پیام تو</span></div>
-   <div class="chat-panel">
-    <div class="chat-head"><div class="mini-avatar">A</div><div><b>گفتگو با ALPHA</b><small>پاسخ‌گوی مهربان تو</small></div><span class="chat-live">● زنده</span></div>
-    <div class="messages" id="messages"><div class="message bot">سلام! خوش اومدی ✨ من ALPHA هستم. دوست داری درباره چی صحبت کنیم؟</div></div>
-    <div class="composer"><textarea id="messageInput" rows="1" placeholder="پیامت رو اینجا بنویس…"></textarea><button id="micBtn" class="round-btn" title="صحبت با میکروفون">🎙</button><button id="sendBtn" class="send-btn" title="ارسال">➤</button></div>
-    <div class="hint">برای صحبت، روی میکروفون بزن · برای ارسال، Enter را فشار بده</div>
-   </div>
-  </section>
- </main>
-</div>
-<script type="module" src="script.js"></script>
-</body></html>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ALPHA | دستیار هوشمند</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="layout">
+<aside class="sidebar"><div class="logo"><b>A</b> ALPHA</div><button id="newChat">＋ گفتگوی جدید</button><p class="muted">فضای شخصی</p><div class="nav active">◉　دستیار ALPHA</div><div class="nav">✧　شخصیت من</div><div class="sidefoot">● آنلاین <small>همراه دیجیتالی تو</small></div></aside>
+<main><header><span>همراه هوشمند تو</span><span class="live">● آماده گفتگو</span></header>
+<section class="hero"><div class="intro"><small>● آنلاین و آماده گفتگو</small><h1>سلام، من <em>ALPHA</em> هستم</h1><p>هر چیزی توی ذهنته، با من در میون بذار.</p></div>
+<div class="avatar-area"><div class="halo"></div><canvas id="avatar"></canvas><div class="model-tag">ALPHA · 3D AVATAR</div></div>
+<div class="chat"><div class="chat-title"><b class="tinylogo">A</b><div><strong>گفتگو با ALPHA</strong><small>پاسخ‌گوی مهربان تو</small></div><span>● زنده</span></div><div id="messages"><div class="msg bot">سلام! خوش اومدی ✨ من ALPHA هستم. دوست داری درباره چی صحبت کنیم؟</div></div>
+<div class="compose"><textarea id="input" rows="1" placeholder="پیامت رو اینجا بنویس…"></textarea><button id="mic" title="صحبت با میکروفون">🎙</button><button id="send">➤</button></div><small class="hint">برای ارسال Enter را بزن · برای صحبت روی میکروفون بزن</small></div>
+</section></main></div><script type="module" src="script.js"></script></body></html>
